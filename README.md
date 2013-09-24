@@ -1,14 +1,23 @@
-Sinatra Example
-============== 
+# Map Controller #
+ 
 
-This is a barebones Sinatra example
+App with a main view panel for maps of any kind along with a controller view. 
+
+### Application Stack ######
 
 
-Dependencies
+- Sinatra
+
+- Angular
+
+- Bootstrap 3
+
+
+### Dependencies ######
 
 `gem install sinatra`
 
 
-Launch
+### Launch ######
 
 `rackup config.ru`
