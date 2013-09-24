@@ -8,7 +8,7 @@ App with a main view panel for maps of any kind along with a controller view.
 
 - Sinatra
 
-- Angular
+- AngularJS
 
 - Bootstrap 3
 
