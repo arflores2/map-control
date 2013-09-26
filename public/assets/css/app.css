@@ -17,6 +17,11 @@ html, body {
 
 .afix{
 	position: fixed;
-	top: 0;
+	top: 50px;
 	right:0;
+}
+
+.stats-viewer {
+	background-color: white;
+	padding:10px;
 }

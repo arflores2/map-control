@@ -1,0 +1,25 @@
+<div class="marker-viewer">
+	<div>
+		<h4>Map Stats</h4>
+		<h5>Map Bounds</h5>	
+		<div class="form-group">
+			<label class="text-muted" for="map-bounds-sw">SW</label>
+			<div>{{mapBounds.sw}}</div>
+		</div>
+		<div class="form-group">
+			<label class="text-muted" for="map-bounds-ne">NE</label>
+			<div>{{mapBounds.ne}}</div>
+		</div>
+	</div>
+	<div>
+		<h5>Map Center</h5>
+		<div class="form-group">
+			<label class="text-muted" for="map-center-lat">Latitude</label>
+			<input id="map-center-lat" type="text" class="form-control" value="{{mapCenter.lat}}">
+		</div>
+		<div class="form-group">
+			<label class="text-muted" for="map-center-lon">Longitude</label>
+			<input id="map-center-lon" type="text" class="form-control" value="{{mapCenter.lon}}">
+		</div>
+	</div>
+</div>

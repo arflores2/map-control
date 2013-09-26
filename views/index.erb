@@ -1,9 +1,34 @@
-	<div class="row fill" ng-app="mapcontrol">
+	<div class="row fill" ng-controller="MapCtrl">
 		<div class="fill">
-			<googlemap markers="map.markers"></googlemap>
+			<googlemap
+				points="map.points"
+				center="map.center"
+				bounds="map.bounds"
+				zoom="map.zoom"
+
+				on-map-centerchanged=""
+				on-map-boundschanged=""
+				on-map-click=""
+				on-map-dblclick=""
+				on-map-drag=""
+				on-map-dragend=""
+				on-map-dragstart=""
+				on-map-tilesloaded=""
+				on-map-zoomchanged=""
+
+				on-marker-click=""
+			></googlemap>
 		</div>
 
 		<div class="col-sm-3 afix">
-			<viewer></viewer>
+			<statsviewer
+				map-bounds="map.bounds"
+				map-center="map.center"
+				map-zoom="map.zoom"
+			></statsviewer>
+
+			<markerviewer
+				
+			></markerviewer>		
 		</div>
 	</div>
