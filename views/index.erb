@@ -16,7 +16,7 @@
 				on-map-tilesloaded=""
 				on-map-zoomchanged=""
 
-				on-marker-click=""
+				on-marker-click="markerClick(marker)"
 			></googlemap>
 		</div>
 
@@ -27,8 +27,6 @@
 				map-zoom="map.zoom"
 			></statsviewer>
 
-			<markerviewer
-				
-			></markerviewer>		
+			<markerviewer marker="map.marker"></markerviewer>
 		</div>
 	</div>

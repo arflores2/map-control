@@ -5,7 +5,7 @@ angular.module("mapcontrol")
 
     function _clickCallback(marker, callback) {
       return function(event) {
-        console.log(marker);
+        callback({marker: marker});
       }
     }
 

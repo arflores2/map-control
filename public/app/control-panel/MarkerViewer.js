@@ -5,14 +5,12 @@ angular.module('mapcontrol')
 			restrict: 'E',
 			replace: true,
 			scope: {
-				mapBounds: '=',
-				mapCenter: '='
+				marker: '=',
 			},
 
-			templateUrl: '/app/control-panel/StatsViewTpl.html',
+			templateUrl: '/app/control-panel/MarkerViewTpl.html',
 
 			link: function($scope, $element, $attrs) {
-				console.log($scope);
 			}
 		}	
 	})

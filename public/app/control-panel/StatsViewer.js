@@ -12,7 +12,6 @@ angular.module('mapcontrol')
 			templateUrl: '/app/control-panel/StatsViewTpl.html',
 
 			link: function($scope, $element, $attrs) {
-				console.log($scope);
 			}
 		}	
 	})

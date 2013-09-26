@@ -9,4 +9,10 @@ angular.module("mapcontrol")
 			center: {lat: 38.90211704, lon: -77.01692300}
 		};
 
+		$scope.markerClick = function(marker) {
+			console.log('it got here', marker);
+			$scope.$apply(function() {
+				$scope.map.marker = marker;
+			});
+		}
 	});
