@@ -16,11 +16,23 @@
 				on-map-tilesloaded=""
 				on-map-zoomchanged=""
 
-				on-marker-click="markerClick(marker)"
+				on-marker-click="marker.click(marker)"
 			></googlemap>
 		</div>
 
-		<div class="col-sm-3 afix">
+		<div class="col-sm-3 afix afix-left"
+			animate
+			animate-show="palattePanel.show"
+		>
+			<button class="toggle toggle-left btn btn-sm" ng-click="ne5.toggle('palattePanel', 'show')">Toggle</button>
+			<markerpalatte></markerpalatte>
+		</div>
+
+		<div class="col-sm-3 afix afix-right"
+			animate
+			animate-show="controlPanel.show"
+		>
+      <button class="toggle toggle-right btn btn-sm" ng-click="ne5.toggle('controlPanel', 'show')">Toggle</button>
 			<statsviewer
 				map-bounds="map.bounds"
 				map-center="map.center"
