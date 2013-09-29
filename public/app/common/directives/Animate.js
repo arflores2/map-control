@@ -35,18 +35,26 @@ ne5common.directive('animate', function() {
     } 
   }
 
+  function _getTargetElement($element) {
+    var el = $element.children()[0];
+
+    return $( el );
+  }
+
   return {
     restrict: 'A',
 
     link: function($scope, $element, $attrs) {
-      _setOriginalValues($element);
+      var $el = _getTargetElement($element);
+      _setOriginalValues($el);
 
       $scope.$watch($attrs.animateShow, function(newValue, oldValue) {
+        var $el = _getTargetElement($element);
         if(newValue === true) {
-          _show($element);
+          _show($el);
         }
         else {
-          _hide($element);
+          _hide($el);
         }
       }, true);
     }

@@ -23,6 +23,11 @@ button.toggle {
 }
 
 button.toggle.toggle-left {
+  right: 0;
+  left: inherit;
+}
+
+button.toggle.toggle-right {
   left: 0;
   right: inherit; 
 }
@@ -32,30 +37,78 @@ button.toggle.toggle-left {
   top: 50px;
   left: 0;
 
-  background-color: white;
+  /*background-color: white;*/
+}
+
+.afix .afix-content {
+  width: 80%;
+  padding: 10px;
+}
+
+.afix .afix-button {
+  width: 20px;
 }
 
 .afix.afix-left {
+  left: 0;
+  right: inherit;
+  padding-left: 0;
+}
+
+.afix.afix-left .afix-content {
+  float: left;
+}
+
+.afix.afix-right {
+  right: 0;
+  left: inherit;
+  padding-right: 0;
+}
+
+.afix.afix-right .afix-content {
+  float:right;
+}
+
+.afix.afix-left .afix-content {
   right: inherit;
   left: 0;
 
-  /* shadowing */
+  margin-left:0;
+
+  overflow:hidden;
+
+  background-color: white;
+
   -moz-box-shadow:    2px 2px 6px rgba(0, 0, 0, .15);
   -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .15);
   box-shadow:         2px 2px 6px rgba(0, 0, 0, .15);
 }
 
-.afix.afix-right {
-  left:inherit;
+.afix.afix-right .afix-content {
+  left: inherit;
   right: 0;
+
+  margin-right:0;
+
+  overflow:hidden;
+
+  background-color: white;
 
   -moz-box-shadow:    -2px 2px 6px rgba(0, 0, 0, .15);
   -webkit-box-shadow: -2px 2px 6px rgba(0, 0, 0, .15);
   box-shadow:         -2px 2px 6px rgba(0, 0, 0, .15);
 }
 
+.afix.afix-left .afix-btn {
+  float:left; 
+}
+
+.afix.afix-right .afix-btn {
+  float:right; 
+}
+
 .viewer, 
 .palatte {
-  padding: 10px;  
+  /*padding: 10px;  */
 }
 

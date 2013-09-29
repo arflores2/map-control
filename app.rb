@@ -7,7 +7,7 @@ class MyApp < Sinatra::Base
 
 	configure do
 		set :static, true
-		set :public, File.dirname(__FILE__) + '/public'
+		set :public_dir, File.dirname(__FILE__) + '/public'
 		set :app_file, __FILE__		
 	end
 
