@@ -15,23 +15,6 @@ html, body {
   margin:0;
 }
 
-button.toggle {
-  position: absolute;
-  top: 30px;
-  right: 0;
-  z-index: 10;
-}
-
-button.toggle.toggle-left {
-  right: 0;
-  left: inherit;
-}
-
-button.toggle.toggle-right {
-  left: 0;
-  right: inherit; 
-}
-
 .afix{
   position: fixed;
   top: 50px;

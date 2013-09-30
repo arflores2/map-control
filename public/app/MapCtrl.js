@@ -27,7 +27,7 @@ angular.module("mapcontrol")
       show: false
     };
 
-    $scope.marker = {
+    $scope.markers = {
       click: function(marker) {
         $scope.$apply(function() {
           $scope.map.marker = marker;

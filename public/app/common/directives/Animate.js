@@ -1,6 +1,6 @@
-var ne5common = angular.module('ne5common', []);
+var common = angular.module('common', []);
 
-ne5common.directive('animate', function() {
+common.directive('animate', function() {
 
   var _originalValues = {
     width: null,

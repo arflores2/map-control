@@ -1,1 +1,1 @@
-angular.module('mapcontrol', ['ne5common']);
+angular.module('mapcontrol', ['common']);

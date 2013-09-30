@@ -5,6 +5,7 @@ angular.module("mapcontrol")
 
     function _clickCallback(marker, callback) {
       return function(event) {
+        console.log('click callback', marker);
         callback({marker: marker});
       }
     }
@@ -37,6 +38,7 @@ angular.module("mapcontrol")
       },
 
       link: function($scope, $element, attrs) {
+        console.log($scope);
 
         _map = new google.maps.Map($element[0], {
           center: new google.maps.LatLng($scope.center.lat, $scope.center.lon),
