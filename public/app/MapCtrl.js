@@ -1,6 +1,16 @@
 angular.module("mapcontrol")
-  .controller("MapCtrl", function($scope) {
+  .controller("MapCtrl", function($rootScope, $scope) {
 
+    var _safeApply = function(fn) {
+      var phase = $rootScope.$$phase;
+      if(phase == '$apply' || phase == '$digest') {
+        if(fn && (typeof(fn) === 'function')) {
+          fn();
+        }
+      } else {
+        $scope.$apply(fn);
+      }
+    }
 
     $scope.ne5 = {
       toggle: function(namespace, key) {
@@ -31,11 +41,13 @@ angular.module("mapcontrol")
     $scope.markers = {
       collection: [],
       add: function(marker) {
-        $scope.markers.collection.push(marker);
+        _safeApply(function() {
+          $scope.markers.collection.push(marker);
+        });
       },
       click: function(marker) {
         console.log('ctrl', 'click', marker);
-        $scope.$apply(function() {
+        _safeApply(function() {
           $scope.map.marker = marker;
         });
       }

@@ -5,6 +5,7 @@ angular.module('mapcontrol')
 			restrict: 'E',
 			replace: true,
 			scope: {
+				markers: '=',
 				mapBounds: '=',
 				mapCenter: '='
 			},
