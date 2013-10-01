@@ -1,63 +1,62 @@
-var common = angular.module('common', []);
+angular.module('common.directives.animate', [])
+  .directive('animate', function() {
 
-common.directive('animate', function() {
-
-  var _originalValues = {
-    width: null,
-    height: null
-  }
-
-  function _setOriginalValues($element) {
-    _originalValues.width = $element.width();
-    _originalValues.height = $element.height();
-
-    _originalValues.paddingLeft = $element.css('padding-left');
-    _originalValues.paddingRight = $element.css('padding-right');
-  }
-
-  function _show($element) {
-    if($element.animate) {
-      $element.animate({
-        width: _originalValues.width,
-        paddingLeft: _originalValues.paddingLeft,
-        paddingRight: _originalValues.paddingRight
-      });
+    var _originalValues = {
+      width: null,
+      height: null
     }
-  }
 
-  function _hide($element) {
-    if($element.animate) {
-      $element.animate({
-        width: 0,
-        paddingLeft: 0,
-        paddingRight: 0
-      });
-    } 
-  }
+    function _setOriginalValues($element) {
+      _originalValues.width = $element.width();
+      _originalValues.height = $element.height();
 
-  function _getTargetElement($element) {
-    var el = $element.children()[0];
+      _originalValues.paddingLeft = $element.css('padding-left');
+      _originalValues.paddingRight = $element.css('padding-right');
+    }
 
-    return $( el );
-  }
+    function _show($element) {
+      if($element.animate) {
+        $element.animate({
+          width: _originalValues.width,
+          paddingLeft: _originalValues.paddingLeft,
+          paddingRight: _originalValues.paddingRight
+        });
+      }
+    }
 
-  return {
-    restrict: 'A',
+    function _hide($element) {
+      if($element.animate) {
+        $element.animate({
+          width: 0,
+          paddingLeft: 0,
+          paddingRight: 0
+        });
+      } 
+    }
 
-    link: function($scope, $element, $attrs) {
-      var $el = _getTargetElement($element);
-      _setOriginalValues($el);
+    function _getTargetElement($element) {
+      var el = $element.children()[0];
 
-      $scope.$watch($attrs.animateShow, function(newValue, oldValue) {
+      return $( el );
+    }
+
+    return {
+      restrict: 'A',
+
+      link: function($scope, $element, $attrs) {
         var $el = _getTargetElement($element);
-        if(newValue === true) {
-          _show($el);
-        }
-        else {
-          _hide($el);
-        }
-      }, true);
-    }
-  };
-});
+        _setOriginalValues($el);
+
+        $scope.$watch($attrs.animateShow, function(newValue, oldValue) {
+          var $el = _getTargetElement($element);
+          if(newValue === true) {
+            _show($el);
+          }
+          else {
+            _hide($el);
+          }
+        }, true);
+      }
+    };
+  });
 

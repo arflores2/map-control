@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle</title>
+
+
+  <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen"/>
+
+  <style>
+    .panel-container {
+      width: 100px;
+      height: 100px;
+
+      position:absolute;
+      top:100px;
+      left:0;
+
+      border: 1px solid blue;
+    }
+
+    .panel-content {
+      width: 80px;
+      height: 100%;
+
+      background-color:orange;
+
+      float:left;
+    }
+
+    .panel-button {
+      width: 10px;
+
+      float:left;
+
+      background-color:red;
+
+    }
+  </style>
+
+  <script src="/vendor/js/jquery-1.10.2.js"></script>
+  <script src="/vendor/js/angular.js"></script>
+
+  <script src="/app/common/directives/Animate.js"></script>
+
+  <script>
+    angular.module('toggleapp', ['ne5common'])
+
+      .controller('ToggleCtrl', function($scope) {
+
+        $scope.panel = {
+          show: true
+        };
+
+        $scope.toggle = function(namespace, key) {
+          console.log('toggle');
+          $scope[namespace][key] = !$scope[namespace][key];
+        }
+      });
+  </script>
+
+</head>
+<body ng-app="toggleapp">
+
+  <div class="panel-container" ng-controller="ToggleCtrl" animate animate-show="panel.show">
+    <div class="panel-content">
+    </div>
+
+    <button class="panel-button" ng-click="toggle('panel', 'show')">
+      <span class="glyphicon glyphicon-chevron-right"></span>      
+    </button>
+  </div>
+</body>
+</html>

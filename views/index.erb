@@ -1,6 +1,9 @@
   <div class="row fill" ng-controller="MapCtrl">
     <div class="fill">
       <googlemap
+        dd
+        dd-droppable="true"
+
         points="map.points"
         center="map.center"
         bounds="map.bounds"
@@ -16,6 +19,7 @@
         on-map-tilesloaded=""
         on-map-zoomchanged=""
 
+        on-marker-add="markers.add(marker)"
         on-marker-click="markers.click(marker)"
       ></googlemap>
     </div>

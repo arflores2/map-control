@@ -16,7 +16,8 @@ angular.module("mapcontrol")
         {id: 123, name: "L'Enfant Plaza Metro", lat: 38.885237, lon: -77.021588},
         {id: 124, name: "Waterfront Metro", lat: 38.876551, lon: -77.017296}
       ],
-      center: {lat: 38.90211704, lon: -77.01692300}
+      center: {lat: 38.90211704, lon: -77.01692300},
+
     };
 
     $scope.controlPanel = {
@@ -28,7 +29,12 @@ angular.module("mapcontrol")
     };
 
     $scope.markers = {
+      collection: [],
+      add: function(marker) {
+        $scope.markers.collection.push(marker);
+      },
       click: function(marker) {
+        console.log('ctrl', 'click', marker);
         $scope.$apply(function() {
           $scope.map.marker = marker;
         });

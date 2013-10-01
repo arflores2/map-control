@@ -8,6 +8,10 @@ class MyApp < Sinatra::Base
     html :toggle
   end
 
+  get '/drag' do
+    html :drag
+  end
+
   def html(view)
     File.read(File.join('views', "#{view.to_s}.html"))
   end

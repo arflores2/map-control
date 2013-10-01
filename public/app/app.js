@@ -1,1 +1,4 @@
-angular.module('mapcontrol', ['common']);
+angular.module('mapcontrol', [
+  'common.directives',
+  'common.services'
+]);
