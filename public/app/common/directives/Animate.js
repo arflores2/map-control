@@ -1,5 +1,5 @@
 angular.module('common.directives.animate', [])
-  .directive('animate', function() {
+  .directive('animate', function($timeout) {
 
     var _originalValues = {
       width: null,
@@ -45,17 +45,21 @@ angular.module('common.directives.animate', [])
 
       link: function($scope, $element, $attrs) {
         var $el = _getTargetElement($element);
-        _setOriginalValues($el);
+        
+        $timeout(function(){
+            _setOriginalValues($el);
 
-        $scope.$watch($attrs.animateShow, function(newValue, oldValue) {
-          var $el = _getTargetElement($element);
-          if(newValue === true) {
-            _show($el);
-          }
-          else {
-            _hide($el);
-          }
-        }, true);
+            $scope.$watch($attrs.animateShow, function(newValue, oldValue) {
+              var $el = _getTargetElement($element);
+              if(newValue === true) {
+                _show($el);
+              }
+              else {
+                _hide($el);
+              }
+            }, true);    
+        }, 100);
+        
       }
     };
   });
