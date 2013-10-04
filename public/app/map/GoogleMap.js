@@ -18,6 +18,7 @@ angular.module("mapcontrol")
       point.position = latLng,
       point.map = config.map,
       point.title = config.title;
+      point.draggable = true;
 
       marker = new google.maps.Marker(point);
       marker.lat = marker.getPosition().lat();
@@ -134,6 +135,7 @@ angular.module("mapcontrol")
               title: point.name, 
               lat: point.lat, 
               lon: point.lon, 
+              draggable: true,
               map: _map, 
               clickCallback: $scope.onMarkerClick,
               addCallback: $scope.onMarkerAdd
